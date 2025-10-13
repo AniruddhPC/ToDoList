@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  .priority-low{
+    @apply border-l-4 border-green-500;
+  }
+  .priority-medium{
+    @apply border-l-4 border-yellow-500;
+  }
+  .priority-high{
+    @apply border-l-4 border-red-500;
+  }
+}
