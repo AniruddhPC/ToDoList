@@ -32,7 +32,7 @@ const taskSchema=new mongoose.Schema(
             default:"medium",
         },
     },
-    {timpstamps:true}
+    {timestamps:true}
 );
 
 module.exports=mongoose.model("Task",taskSchema);
