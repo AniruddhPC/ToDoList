@@ -1,7 +1,7 @@
  import axios from "axios";
                     
  const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://todolist-3-gylt.onrender.com/api",
  });
 
  api.interceptors.request.use(config=>{
