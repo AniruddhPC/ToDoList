@@ -75,8 +75,10 @@ import EditModal from "./components/EditModal";
   }
   const openEditModal=(task)=>{setTaskToEdit(task)};
   const closeEditModal=()=>{setTaskToEdit(null)};
-  useEffect((isAuthnticated) => {
+  useEffect(() => {
+   if(isAuthenticated){
     fetchTasks();
+   }
   }, [isAuthenticated]);
   if(!isAuthenticated){
     if(currentPage==='register'){
