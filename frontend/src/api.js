@@ -1,7 +1,7 @@
  import axios from "axios";
                     
  const api = axios.create({
-  baseURL: "https://to-do-list-1-f43p.onrender.com/api/tasks",
+  baseURL: "https://todolist-2-dyi1.onrender.com/api",
  });
 
  api.interceptors.request.use(config=>{
@@ -9,7 +9,7 @@
     const isProtected=config.url.includes('/tasks') || config.url.includes('/change-password');
     if(token && isProtected)
     {
-        config.headers.Authorization=`Bearer${token}`;
+        config.headers.Authorization=`Bearer ${token}`;
     }
     return config;
  },error=>{

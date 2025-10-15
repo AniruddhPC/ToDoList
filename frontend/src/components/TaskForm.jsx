@@ -23,7 +23,7 @@ const TaskForm = ({ fetchTasks }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.post("/", formData);
+      await api.post("/tasks", formData);
       fetchTasks();
       setFormData({
         title: "",

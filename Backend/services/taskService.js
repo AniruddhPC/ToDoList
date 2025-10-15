@@ -1,5 +1,5 @@
 const Task=require("../models/Task")
-exports.createTask=async(taskData)=>
+exports.createTask=async(taskData,userId)=>
 {
     const task=new Task({...taskData,user:userId});
     return await task.save();
