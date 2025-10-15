@@ -58,7 +58,7 @@ exports.searchTasks=async(req,res)=>
 {
 try{
         const query=req.query.title || "";
-        const tasks=await taskService.searchTasks(query);
+        const tasks=await taskService.searchTasks(query,req.user.id);
         res.status(200).json(tasks);
 }catch(error){
         res.status(404).json({message:error.message});

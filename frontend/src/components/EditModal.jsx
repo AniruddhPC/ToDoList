@@ -35,7 +35,7 @@ const EditModal = ({ task,fetchTasks,closeModal })=>{
     const saveEdit=async(e)=>{
         e.preventDefault();
         try{
-            await api.put(`/${task._id}`,editData);
+            await api.put(`/tasks/${task._id}`,editData);
             fetchTasks();
             closeModal();
         }catch(err){

@@ -4,7 +4,7 @@ import api from '../api';
 const Register=({onAuthSuccess,goToLogin})=>{
     const [formData,setFormData]=useState({
         name:'',
-        emailL:'',
+        email:'',
         password:'',
         confirmPassword:''
     });

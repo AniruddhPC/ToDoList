@@ -4,7 +4,7 @@ exports.createTask=async(taskData,userId)=>
     const task=new Task({...taskData,user:userId});
     return await task.save();
 }
-exports.getAllTasks=async()=>{
+exports.getAllTasks=async(userId)=>{
     return await Task.find({user:userId});
 }
 exports.getTaskById=async(id)=>{
@@ -17,6 +17,6 @@ exports.deleteTask=async(id)=>
 {
     return await Task.findByIdAndDelete(id);
 }
-exports.searchTasks=async(title)=>{
+exports.searchTasks=async(title,userId)=>{
     return await Task.find({user:userId,title:{$regex:title,$options:"i"}});
 }

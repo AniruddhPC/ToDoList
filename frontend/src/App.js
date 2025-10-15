@@ -41,7 +41,7 @@ import EditModal from "./components/EditModal";
       return;
     }
     try{
-      const res= await api.get(`/search?title=${searchQuery}`);
+      const res= await api.get(`/tasks/search?title=${searchQuery}`);
       if(res.data.length===0)
       {
         alert("NO Tasks Found");
