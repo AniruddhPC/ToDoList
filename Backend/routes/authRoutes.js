@@ -5,6 +5,6 @@ const {protect}=require('../middleware/auth');
 
 router.post('/register',registerUser);
 router.post('/login',loginUser);
-router.post('/change-password',protect,changePassword);
+router.put('/change-password',protect,changePassword);
 
 module.exports=router;
