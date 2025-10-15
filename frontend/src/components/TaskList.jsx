@@ -4,7 +4,7 @@ const TaskList = ({ tasks, fetchTasks,openEditModal}) => {
   const deleteTask = async (id) => {
     try {
       if(window.confirm("Are you sure?")){
-      await api.delete(`/${id}`);
+      await api.delete(`/tasks/${id}`);
       fetchTasks();
     }
     } catch (err) {
