@@ -1,6 +1,14 @@
 import React,{useState,useEffect} from "react";
 import api from "../api";
 
+const getTodayDate = () => {
+const today = new Date();
+const year = today.getFullYear();
+const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
+const day = String(today.getDate()).padStart(2, '0');
+return `${year}-${month}-${day}`;
+};
+const Today= getTodayDate();
 const EditModal = ({ task,fetchTasks,closeModal })=>{
     const [editData,setEditData]=useState({
         title:"",
@@ -88,6 +96,7 @@ const EditModal = ({ task,fetchTasks,closeModal })=>{
                                 name="dueDate"
                                 value={editData.dueDate}
                                 onChange={handleEditChange}
+                                min={Today}
                                 className="p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500"
                                 />
                             )}

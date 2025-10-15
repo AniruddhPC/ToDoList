@@ -3,8 +3,10 @@ import api from "../api";
 const TaskList = ({ tasks, fetchTasks,openEditModal}) => {
   const deleteTask = async (id) => {
     try {
+      if(window.confirm("Are you sure?")){
       await api.delete(`/${id}`);
       fetchTasks();
+    }
     } catch (err) {
       console.error(err);
       alert("Error deleting task!");
