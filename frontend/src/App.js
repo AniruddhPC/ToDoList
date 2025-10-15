@@ -18,11 +18,17 @@ import EditModal from "./components/EditModal";
   const [isChangePasswordModalOpen, setIsChangePasswordModalOpen] = useState(false); 
   const fetchTasks = async () => {
     try {
-      const res = await api.get("/");
+      const res = await api.get("/tasks");
       setTasks(res.data);
     } catch (err) {
       console.error("Error fetching tasks:", err);
+      if(err.response && err.response.status===401)
+      {
+        handleLogout();
+      }
+      else{
       alert("Error fetching tasks!");
+      }
     }
   };
   const handleclear= ()=>{
