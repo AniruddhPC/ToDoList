@@ -70,7 +70,7 @@ const TaskForm = ({ fetchTasks }) => {
           <label htmlFor="status" className="text-sm font-semibold text-gray-400 mb-1">Status</label>
           <select id="status" name="status" value={formData.status} onChange={handleChange} className="p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-blue-500 focus:border-blue-500">
             <option value="pending">Pending</option>
-            <option value="in-progess">In-Progress</option>
+            <option value="in-progress">In-Progress</option>
             <option value="completed">Completed</option>
           </select>
         </div>
